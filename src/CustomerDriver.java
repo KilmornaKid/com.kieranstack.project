@@ -5,7 +5,7 @@ public class CustomerDriver {
         Customer newCustomer = new Customer();
 
         newCustomer.setRegistrationNumber("12345678");
-        newCustomer.setLoginPassword("eyisbf45");
+        newCustomer.setLoginPassword("ebf3265");
 
         new GUI(){};
 
