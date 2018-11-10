@@ -1,9 +1,14 @@
+//Customer.java
 
+//Customers to be stored in file as array list of customers
 
 public class Customer {
 
     private String registrationNumber;
     private String loginPassword;
+    private String name;
+    private String phone;
+    private String email;
     private GUI menu;
 
     //Getters
@@ -14,6 +19,12 @@ public class Customer {
     public String getLoginPassword() {
         return loginPassword;
     }
+
+    public String getNsme() { return name; }
+
+    public String getPhone() { return phone; }
+
+    public String getEmail() { return email; }
 
     public GUI getMenu() {
         return menu;
@@ -28,17 +39,28 @@ public class Customer {
         this.loginPassword = loginPassword;
     }
 
+    public void setName(String name) { this.name = name; }
+
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public void setEmail(String email) { this.email = email; }
+
     public void setMenu(GUI menu) {
         this.menu = menu;
     }
 
+    //No arg Constructor
+
     public Customer() {
-        this("No Registration Entered","No Password Entered",null);
+        this("No Registration Entered","No Password Entered","name","No Phone Number Listed","No Email found",null);
     }
 
-    public Customer(String registrationNumber, String loginPassword, GUI menu){
+    public Customer(String registrationNumber, String loginPassword, String name, String phone, String email, GUI menu){
         setRegistrationNumber(registrationNumber);
         setLoginPassword(loginPassword);
+        setName(name);
+        setPhone(phone);
+        setEmail(email);
         setMenu(menu);
     }
 
