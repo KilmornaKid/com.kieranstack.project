@@ -9,53 +9,53 @@ public class GUI extends JFrame  {
 
     public GUI() {
         super("Main Menu");
-        JPanel panel = new JPanel();
-        panel.setBackground(Color.BLACK);
-        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-        add(panel);
-
         setLayout(new FlowLayout());
-        setSize(400, 500);
-        setLocationRelativeTo(null);
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        JPanel panel = new JPanel();
+
+        JLabel imageLabel = new JLabel(new ImageIcon(GUI.class.getResource("Images/cinemaMain.png"))); //REFERENCE: https://stackoverflow.com/questions/13193960/swing-adding-a-image-into-gui  User: Branislav Lazic
+        add(imageLabel);
+
+        add(panel);
 
         JLabel jLabel = new JLabel();
         jLabel.setText("Registration No: ");
         jLabel.setVisible(true);
         panel.add(jLabel);
 
-        JTextField jTextField = new JTextField(25);
+        JTextField jTextField = new JTextField(20);
         panel.add(jTextField);
 
+        JPanel panel2 = new JPanel();
+        add(panel2);
 
         JLabel jLabel2 = new JLabel();
-        jLabel2.setText("Password: ");
+        jLabel2.setText("Enter Password:");
         jLabel2.setVisible(true);
-        panel.add(jLabel2);
+        panel2.add(jLabel2);
 
-        JTextField jTextField2 = new JTextField(25);
-        panel.add(jTextField2);
+        JTextField jTextField2 = new JTextField(20);
+        panel2.add(jTextField2);
 
-
-        JButtonSignUp();
-
+        JPanel panel3 = new JPanel();
+        add(panel3);
 
         JButton jButton = new JButton();
         jButton.setText("Login");
-        jButton.setBorderPainted(true);
-        jButton.setBorderPainted(true);
-        add(jButton);
+        panel3.add(jButton);
 
-
-        JButtonExit();
-
+        JButtonSignUp();
 
         jButton.addActionListener((ActionEvent e)->
         {
             jButton.removeAll(); //https://stackoverflow.com/questions/31998027/jbutton-doesnt-work-at-all-after-i-dispose-existing-frame-and-sets-the-new-fram  User: Hovercraft Full Of Eels
             GUI2();
         });
+
+
+
 
     }
 
@@ -68,6 +68,8 @@ public class GUI extends JFrame  {
 
         //Main Menu Calling loginGUI which drives the rest of the program
         GUI loginGUI = new GUI();
+        loginGUI.setSize(400,760);
+        loginGUI.setLocationRelativeTo(null);
         loginGUI.setVisible(true);
 
     }//end of main
@@ -78,6 +80,14 @@ public class GUI extends JFrame  {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400,500);
     }
+
+    public void GUI3(){
+        setTitle("Menu3");
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400,500);
+    }
+
 
     //JButtons for Program
 
@@ -101,7 +111,7 @@ public class GUI extends JFrame  {
         add(jButton);
         jButton.addActionListener((ActionEvent e)->
         {
-            System.exit(0);
+            GUI3();
         });
     }
 
