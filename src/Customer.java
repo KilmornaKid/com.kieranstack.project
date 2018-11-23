@@ -2,9 +2,11 @@
 
 //Customers to be stored in file as array list of customers
 
-public class Customer {
+import java.io.Serializable;
 
-    private String registrationNumber;
+public class Customer implements Serializable { //JB added code to ensure Customer objects could be saved successfully
+
+    private String userName;
     private String loginPassword;
     private String name;
     private String phone;
@@ -12,8 +14,8 @@ public class Customer {
     private GUI menu;
 
     //Getters
-    public String getRegistrationNumber() {
-        return registrationNumber;
+    public String getUserName() {
+        return userName;
     }
 
     public String getLoginPassword() {
@@ -31,8 +33,8 @@ public class Customer {
     }
 
     //Setters
-    public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setLoginPassword(String loginPassword) {
@@ -55,8 +57,8 @@ public class Customer {
         this("No Registration Entered","No Password Entered","name","No Phone Number Listed","No Email found",null);
     }
 
-    public Customer(String registrationNumber, String loginPassword, String name, String phone, String email, GUI menu){
-        setRegistrationNumber(registrationNumber);
+    public Customer(String userName, String loginPassword, String name, String phone, String email, GUI menu){
+        setUserName(userName);
         setLoginPassword(loginPassword);
         setName(name);
         setPhone(phone);
@@ -66,7 +68,7 @@ public class Customer {
 
 
     public String toString(){
-        return "Registration Number: " + getRegistrationNumber() + "\nPassword: " + getLoginPassword();
+        return "Registration Number: " + getUserName() + "\nPassword: " + getLoginPassword();
     }
 
 
