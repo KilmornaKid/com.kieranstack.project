@@ -51,11 +51,6 @@ public class GUI extends JFrame  {
             newCustomer.setUserName(JOptionPane.showInputDialog(null, "Please enter your username:"));
             newCustomer.setLoginPassword(JOptionPane.showInputDialog(null, "Please enter your password:"));
             JOptionPane.showMessageDialog(null, "\n" + newCustomer.toString());
-            /*try{
-                openCustomers(customers);
-            }catch (IOException  | ClassNotFoundException exs){
-                JOptionPane.showMessageDialog(null, "Problem reading from file!");
-            }*/
             customers.add(newCustomer);
             /*JB added code to handle IOException possibility*/
             try {
@@ -63,11 +58,6 @@ public class GUI extends JFrame  {
             } catch (IOException ioe) {
                 JOptionPane.showMessageDialog(null, "Problem saving to file!");
             }
-
-
-
-            JOptionPane.showMessageDialog(null, "\n" + customers);
-
         });
 
 
@@ -245,7 +235,7 @@ public class GUI extends JFrame  {
 
 
         newJButton2.addActionListener((ActionEvent e)-> {
-            JOptionPane.showMessageDialog(null,"You have booked " + newSeat.getSeatNo() + " tickets");
+            JOptionPane.showMessageDialog(null,"You have booked " + (newSeat.getSeatNo()+1) + " tickets");
         });
 
 
@@ -269,7 +259,7 @@ public class GUI extends JFrame  {
 
         JPanel newJPanel = new JPanel();
         add(newJPanel);
-        JLabel headingLabel = new JLabel("<html><center><h1>S C R E E N 1 | S C R E E N 1 | S C R E E N 1</h1></center></html>"); //https://docs.oracle.com/javase/tutorial/uiswing/components/html.html
+        JLabel headingLabel = new JLabel("<html><center><h1>S C R E E N | S C R E E N 1 | S C R E E N</h1></center></html>"); //https://docs.oracle.com/javase/tutorial/uiswing/components/html.html
         newJPanel.add(headingLabel);
 
         try{
@@ -335,7 +325,7 @@ public class GUI extends JFrame  {
         setTitle("Pick Seats");
         setLayout(new FlowLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(490,800);
+        setSize(500,800);
 
     }
 

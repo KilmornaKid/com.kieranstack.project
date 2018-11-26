@@ -12,7 +12,8 @@ public class Customer implements Serializable { //JB added code to ensure Custom
     private String name;
     private String phone;
     private String email;
-    private GUI menu;
+    private float accountBalance;
+
 
     //Getters
     public String getUserName() {
@@ -29,8 +30,8 @@ public class Customer implements Serializable { //JB added code to ensure Custom
 
     public String getEmail() { return email; }
 
-    public GUI getMenu() {
-        return menu;
+    public float getAccountBalance() {
+        return accountBalance;
     }
 
     //Setters
@@ -46,35 +47,36 @@ public class Customer implements Serializable { //JB added code to ensure Custom
 
     public void setPhone(String phone) {
 
-/*        if(phone.length() != 10 && phone.matches("[a-zA-Z]+")){
+        if(phone.length() != 10 && phone.matches("[a-zA-Z]+")){
             setPhone(JOptionPane.showInputDialog(null,"Please re-enter your phone number: (Should be 10 numbers)"));
         }else{
 
-        }*/
+        }
         this.phone = phone;
 
     }
 
 
+
     public void setEmail(String email) { this.email = email; }
 
-    public void setMenu(GUI menu) {
-        this.menu = menu;
+    public void setAccountBalance(float accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     //No arg Constructor
 
     public Customer() {
-        this("No Registration Entered","No Password Entered","name","No Phone Number Listed","No Email found",null);
+        this("No Registration Entered","No Password Entered","name","No Phone Number Listed","No Email found",0f);
     }
 
-    public Customer(String userName, String loginPassword, String name, String phone, String email, GUI menu){
+    public Customer(String userName, String loginPassword, String name, String phone, String email, float accountBalance){
         setUserName(userName);
         setLoginPassword(loginPassword);
         setName(name);
         setPhone(phone);
         setEmail(email);
-        setMenu(menu);
+        setAccountBalance(accountBalance);
     }
 
 
