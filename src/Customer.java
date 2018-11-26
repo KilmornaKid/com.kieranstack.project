@@ -2,6 +2,7 @@
 
 //Customers to be stored in file as array list of customers
 
+import javax.swing.*;
 import java.io.Serializable;
 
 public class Customer implements Serializable { //JB added code to ensure Customer objects could be saved successfully
@@ -22,7 +23,7 @@ public class Customer implements Serializable { //JB added code to ensure Custom
         return loginPassword;
     }
 
-    public String getNsme() { return name; }
+    public String getName() { return name; }
 
     public String getPhone() { return phone; }
 
@@ -43,7 +44,17 @@ public class Customer implements Serializable { //JB added code to ensure Custom
 
     public void setName(String name) { this.name = name; }
 
-    public void setPhone(String phone) { this.phone = phone; }
+    public void setPhone(String phone) {
+
+/*        if(phone.length() != 10 && phone.matches("[a-zA-Z]+")){
+            setPhone(JOptionPane.showInputDialog(null,"Please re-enter your phone number: (Should be 10 numbers)"));
+        }else{
+
+        }*/
+        this.phone = phone;
+
+    }
+
 
     public void setEmail(String email) { this.email = email; }
 
@@ -68,8 +79,9 @@ public class Customer implements Serializable { //JB added code to ensure Custom
 
 
     public String toString(){
-        return "Registration Number: " + getUserName() + "\nPassword: " + getLoginPassword();
+        return /*"Name: "  + getName() +  "\nPhone Number: "  + getPhone() + "\nEmail" + getEmail() + */"User Name: " + getUserName() + "\nPassword: " + getLoginPassword();
     }
+
 
 
 }

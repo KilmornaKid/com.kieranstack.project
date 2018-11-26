@@ -1,10 +1,12 @@
-public class Seat {
+import java.io.Serializable;
 
-    private boolean seatsAvailable = true;
+public class Seat implements Serializable {
+
+    private boolean seatsAvailable;
     private char seatRow;
     private int seatNo;
 
-    public boolean isSeatsAvailible() {
+    public boolean isSeatsAvailable() {
         return seatsAvailable;
     }
 
@@ -16,7 +18,7 @@ public class Seat {
         return seatNo;
     }
 
-    public void setSeatsAvailible(boolean seatsAvailible) {
+    public void setSeatsAvailable(boolean seatsAvailible) {
         this.seatsAvailable = seatsAvailible;
     }
 
@@ -36,6 +38,10 @@ public class Seat {
         this.seatsAvailable = seatsAvailable;
         this.seatRow = seatRow;
         this.seatNo = seatNo;
+    }
+
+    public String toString(){
+        return "Seat Availability: " + isSeatsAvailable() + "\nSeat Row: " + getSeatRow() + "\nSeat Number: " + getSeatNo();
     }
 
 }
